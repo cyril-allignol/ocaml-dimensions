@@ -21,10 +21,14 @@ type 'i one = 'i * 'i s
 type 'i two = 'i * 'i s s
 type 'i three = 'i * 'i s s s
 type 'i four = 'i * 'i s s s s
+type 'i five = 'i * 'i s s s s s
+type 'i six = 'i * 'i s s s s s s
 type 'i m_one = 'i s * 'i
 type 'i m_two = 'i s s * 'i
 type 'i m_three = 'i s s s * 'i
 type 'i m_four = 'i s s s s * 'i
+type 'i m_five = 'i s s s s s * 'i
+type 'i m_six = 'i s s s s s s * 'i
 
 type ('l, 'm, 't, 'tp) length = ('l one, 'm zero, 't zero, 'tp zero) t
 type ('l, 'm, 't, 'tp) mass = ('l zero, 'm one, 't zero, 'tp zero) t
@@ -33,20 +37,50 @@ type ('l, 'm, 't, 'tp) temperature = ('l zero, 'm zero, 't zero, 'tp one) t
 
 type ('l, 'm, 't, 'tp) dimensionless = ('l zero, 'm zero, 't zero, 'tp zero) t
 type ('l, 'm, 't, 'tp) scalar = ('l, 'm, 't, 'tp) dimensionless
+type ('l, 'm, 't, 'tp) angle = ('l, 'm, 't, 'tp) dimensionless
+type ('l, 'm, 't, 'tp) solid_angle = ('l, 'm, 't, 'tp) dimensionless
+type ('l, 'm, 't, 'tp) mach_number = ('l, 'm, 't, 'tp) dimensionless
 
 type ('l, 'm, 't, 'tp) area = ('l two, 'm zero, 't zero, 'tp zero) t
 type ('l, 'm, 't, 'tp) volume = ('l three, 'm zero, 't zero, 'tp zero) t
 
 type ('l, 'm, 't, 'tp) speed = ('l one, 'm zero, 't m_one, 'tp zero) t
 type ('l, 'm, 't, 'tp) acceleration = ('l one, 'm zero, 't m_two, 'tp zero) t
+type ('l, 'm, 't, 'tp) jerk = ('l one, 'm zero, 't m_three, 'tp zero) t
+type ('l, 'm, 't, 'tp) jounce = ('l one, 'm zero, 't m_four, 'tp zero) t
+type ('l, 'm, 't, 'tp) crackle = ('l one, 'm zero, 't m_five, 'tp zero) t
+type ('l, 'm, 't, 'tp) pop = ('l one, 'm zero, 't m_six, 'tp zero) t
+type ('l, 'm, 't, 'tp) angular_speed = ('l zero, 'm zero, 't m_one, 'tp zero) t
+type ('l, 'm, 't, 'tp) angular_acceleration =
+  ('l zero, 'm zero, 't m_two, 'tp zero) t
 
 type ('l, 'm, 't, 'tp) frequency = ('l zero, 'm zero, 't m_one, 'tp zero) t
+
+type ('l, 'm, 't, 'tp) moment_of_inertia = ('l two, 'm one, 't zero, 'tp zero) t
+type ('l, 'm, 't, 'tp) momentum = ('l one, 'm one, 't m_one, 'tp zero) t
 type ('l, 'm, 't, 'tp) force = ('l one, 'm one, 't m_two, 'tp zero) t
+type ('l, 'm, 't, 'tp) impulse = ('l one, 'm one, 't m_one, 'tp zero) t
 type ('l, 'm, 't, 'tp) pressure = ('l m_one, 'm one, 't m_two, 'tp zero) t
 type ('l, 'm, 't, 'tp) energy = ('l two, 'm one, 't m_two, 'tp zero) t
+type ('l, 'm, 't, 'tp) specific_energy = ('l two, 'm zero, 't m_two, 'tp zero) t
+type ('l, 'm, 't, 'tp) heat = ('l, 'm, 't, 'tp) energy
+type ('l, 'm, 't, 'tp) heat_capacity = ('l two, 'm one, 't m_two, 'tp m_one) t
+type ('l, 'm, 't, 'tp) torque = ('l two, 'm one, 't m_two, 'tp zero) t
+type ('l, 'm, 't, 'tp) work = ('l two, 'm one, 't m_two, 'tp zero) t
 type ('l, 'm, 't, 'tp) power = ('l two, 'm one, 't m_three, 'tp zero) t
 
+type ('l, 'm, 't, 'tp) linear_density = ('l m_one, 'm one, 't zero, 'tp zero) t
+type ('l, 'm, 't, 'tp) area_density = ('l m_two, 'm one, 't zero, 'tp zero) t
 type ('l, 'm, 't, 'tp) density = ('l m_three, 'm one, 't zero, 'tp zero) t
+type ('l, 'm, 't, 'tp) specifi_volume = ('l three, 'm m_one, 't zero, 'tp zero) t
+
+type ('l, 'm, 't, 'tp) half_life = ('l, 'm, 't, 'tp) time
+type ('l, 'm, 't, 'tp) mean_life_time = ('l, 'm, 't, 'tp) time
+
+type ('l, 'm, 't, 'tp) wave_length = ('l, 'm, 't, 'tp) length
+type ('l, 'm, 't, 'tp) wave_number = ('l m_one, 'm zero, 't zero, 'tp zero) t
+
+type ('l, 'm, 't, 'tp) fuel_efficiency = ('l m_two, 'm zero, 't zero, 'tp zero) t
 
 let c = 299_792_458.
 
